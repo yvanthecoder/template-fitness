@@ -1,0 +1,590 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background:rgb(29, 29, 29);
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 30px;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 10003;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+.navbar.sticky{
+  background:white;
+  padding: 10px 0;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+  color:rgb(122, 197, 0);
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .menu-list{
+  display: inline-flex;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list li a{
+  color:  rgb(122, 197, 0); 
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+  color: gold;
+  text-decoration: underline;
+}
+.banner{
+  background: url("banner.jpg") no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.about{
+  padding: 30px 0;
+}
+.about .title{
+  font-size: 38px;
+  font-weight: 700;
+}
+.about p{
+  padding-top: 20px;
+  text-align: justify;
+}
+.icon{
+
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.menu-list .cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+@media (max-width: 1230px) {
+  .content{
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .content{
+    padding: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .content{
+    padding: 0 30px;
+  }
+}
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+    color: rgb(122, 197, 0);
+  }
+  .icon.hide{
+    display: none;
+    
+  }
+  .navbar .menu-list{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    background:black;
+    transition: all 0.3s ease;
+  }
+  .navbar.show .menu-list{
+    left: 0%;
+  }
+  .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .navbar .logo a{
+    font-size: 27px;
+    
+  }
+}
+.display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+body {
+    background-color: black;
+    color: white;
+    
+}
+.img:before {
+content: '';
+position: absolute;
+width: 100%;
+height: 400px;
+bottom: 0px;
+background: linear-gradient(to top, black, transparent);
+z-index: 10000;
+}
+.text {
+    color: white;
+    font-size: 40px;
+    font-family: Impact;
+    display: flex;
+}
+.textSmall {
+    color: gold;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: 50px;
+}
+.boxtext {
+    margin-top: -400px;
+    width: 90%;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 90%;
+    z-index: 10001;
+}
+a {
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+.scroll {
+    font-size: 20px;
+    text-decoration: underline;
+    font-family: impact;
+    color: gold;
+    background: transparent;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap : wrap;
+
+}
+#aside  {
+  background: whitesmoke;
+  color: grey; 
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  padding: 40px 40px;
+
+}
+.button  {
+  color: white;
+  width: 150px;
+  height: 50px;
+  padding-top: 7px;
+  text-align: center;
+  background: rgb(122, 197, 0); 
+  border: 1px solid rgb(122, 197, 0);
+  box-align: center; 
+  text-decoration: underline;
+}
+.button:hover {
+  color: white;
+  width: 150px;
+  height: 50px;
+  padding-top: 07px;
+  text-align: center;
+  background: transparent; 
+  border: 1px solid rgb(122, 197, 0);
+  text-decoration: underline;
+}
+
+.underline {
+  background-color: rgb(122, 197, 0);
+  width: 100px;
+  height: 3px;
+  margin-top: 15px;
+}
+.abouts {
+ width: 100%;
+ height: 400px;
+ display:flex;
+ justify-content: space-around;
+ flex-wrap: wrap;
+ padding: 50px;
+ background: transparent;
+}
+@media (max-width: 500px) {
+  .abouts {
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: transparent;
+      }
+}
+@media (max-width: 500px) {
+  .textabout {
+    width: 100%;
+    background:transparent;
+    color: black;
+    padding: 10px 10px;
+    height: 400px;
+    z-index: -1;
+  }
+}
+@media (max-width: 3000px) {
+  .textabout {
+    width: 40%;
+    padding: 30px 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .imageabout {
+    width: 100%;
+    padding-top: 10px;
+  }
+}
+@media (max-width: 3000px) {
+  .imageabout {
+    width: 30%;
+    padding-top:10px;
+  }
+}
+.classes {
+  width:100%;
+  
+  padding: 10px 10px;
+  background: rgb(3, 2, 2);
+  margin-top: 30px;
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.boxclasse{
+  background:rgb(29, 29, 29);
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap : wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+.imgclasse {
+  margin-top: -75px;
+}
+.dis {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.comment {
+  color: black;
+  background: white;
+  width: 100%;
+  padding-top: 50px;
+}
+#dis {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  
+  padding-bottom: 40px;
+  background-color: rgb(226, 248, 226);
+}
+.containerFooter{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #081431;
+  padding: 70px 0;
+  width: 100%;
+  
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: rgb(122, 197, 0);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+.commentaire {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 20px;
+  height: 600px;
+  background:rgb(0, 5, 46);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commentaire .formBx {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.commentaire .formBx form {
+  position: relative;
+  width: 100%;
+  padding: 0 0 0 75px;
+}
+.commentaire .formBx form h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+
+}
+.commentaire .formBx form .inputBox {
+  position: relative;
+  margin-bottom: 40px;
+}
+.commentaire .formBx form .inputBox:last-child {
+  margin-bottom: 0px;
+}
+.commentaire .formBx form .inputBox input {
+  position: relative;
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+  color: white;
+  padding-bottom: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  resize:none;
+
+}
+.commentaire .formBx form .inputBox textarea {
+  position: relative;
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+  color: white;
+  padding-bottom: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  resize:none;
+
+}
+.commentaire .formBx form .inputBox textarea {
+  height: 100px;
+}
+.commentaire .formBx form .inputBox input[type="submit"] {
+  background:white;
+  padding: 8px 20px;
+  margin-top: -10px;
+  width: 100px;
+  cursor: pointer;
+  background:rgb(122, 197, 0);
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+}
+.commentaire .formBx form .inputBox input[type="submit"]:focus {
+  background:rgb(122, 197, 0);
+  color: white;
+}
+.commentaire .formBx form .inputBox span {
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+  font-weight: 300;
+  display: inline-block;
+  pointer-events: none;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5;
+} 
+.commentaire .formBx form .inputBox input:focus ~ span,
+.commentaire .formBx form .inputBox textarea:focus ~ span,
+.commentaire .formBx form .inputBox input:valid ~ span,
+.commentaire .formBx form .inputBox textarea:valid ~ span {
+  transform: translateY(-24px);
+  color:rgb(122, 197, 0);
+}
+.commentaire .formBx form .inputBox input:focus,
+.commentaire .formBx form .inputBox textarea:focus,
+.commentaire .formBx form .inputBox input:valid,
+.commentaire .formBx form .inputBox textarea:valid {
+  border-bottom-color: white;
+}
+.commentaire .imgBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.commentaire .imgBx:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(122, 197, 0);
+  transform-origin: bottom;
+  transform: skew(-25deg) translateX(10%); 
+}
+
+.commentaire .imgBx img {
+ position: absolute;
+ bottom: 0;
+ max-height: 95%;
+}
+
+@media (max-width: 991px) {
+  .commentaire .formBx {
+    width: 100%;
+    padding:0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
